@@ -1,30 +1,26 @@
 # UCHES Submission Package
 
-UCHES is a standalone Intelligent Contract. Its load-bearing property is consensus-backed authenticity verification before deterministic escrow release. External evidence is acquired inside nondeterministic execution; payout calculations and all state transitions are deterministic.
+UCHES is a standalone authenticity and provenance registry. It records artifact identity, issuer claims, timestamped custody events, and source evidence, then uses GenLayer validator consensus to produce a structured authenticity result. It has no escrow, payment, bond, or payout mechanism.
 
-## Deployment
+## Trust model
 
-- Network: GenLayer StudioNet
-- Chain ID: `61999`
-- Contract address: `0xF8BDAE4d4966bB93A0Da6F529984C3c4915A9073`
-- Explorer: https://explorer-studio.genlayer.com/address/0xF8BDAE4d4966bB93A0Da6F529984C3c4915A9073
-- Deployment transaction: `0xaacae5c3e84377ff2e69d9906f547d4ea49e1514cbfa1902555a82a1cfc00c94`
+The registrant supplies claims and evidence, but cannot author the authenticity result alone. Validators independently inspect the artifact hash, provenance chain, and public sources. Stable status and derivative flags are compared; explanations remain descriptive.
 
-The exact `contracts/uches.py` source was accepted by StudioNet deployment consensus in one round. Deployment transaction: `0xaacae5c3e84377ff2e69d9906f547d4ea49e1514cbfa1902555a82a1cfc00c94`.
-
-## Live verification
-
-The funded live lifecycle created intent `1`, submitted one authenticity evidence item, and executed `resolve()` with real validators. The final result was `INCONCLUSIVE` because the evidence was self-asserted and lacked external provenance; escrow remained safely held (`open_intents: 1`, `settled_intents: 0`, balance `10000000000000000`). The resolve transaction was `0x0c758b2776e79d4ec6d9e50d751bd5844e5a1f9f9355570e9ce728abeca42134`; validator votes included three agrees, one disagree, and one idle.
-
-## Reproducible commands
+## Commands
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install genlayer gltest pytest
-python -m py_compile contracts/uches.py
-genvm-lint check contracts/uches.py --json
+python -m py_compile contracts/provenance.py
+genvm-lint check contracts/provenance.py --json
 pytest -q tests/direct
-pytest -q tests/integration/test_live_aase_cycle.py
-pytest -q -s tests/integration/test_real_validator_cycle.py
 ```
+
+## Live deployment and measured lifecycle
+
+- Network: GenLayer StudioNet; chain ID `61999`.
+- Contract: `0x37C14D19be3E62775e8a528bb9d1923deFFF5d16`.
+- Deployment: `0x89c67c44e58c49e16b109d6afb645078008e230524f41e5f53da953a0a059773`.
+- Register artifact: `0xbb1c0eba01a6fd43c49fc3298ab4d344af932052f3b20e4bd0267d2b11c72607`.
+- Add custody event: `0x890cd269e2afc91e07a4bb76284a6c1428aa56af0d03a3e9d66fd4e586b3fcdc`.
+- Submit provenance evidence: `0x3973484de85ac71f28d5f35a502b68f610bd51f2d6edca3bb6bef6e87f7e91bf`.
+- Real-validator verification: `0x071b39446ffae77ef0d51e80f259756a450f319a6498e76ef81c68028c4a96f0`.
+- Final state: `INCONCLUSIVE`; one custody event and one evidence record. Validators correctly refused to authenticate unsupported issuer, origin, and hash claims.
