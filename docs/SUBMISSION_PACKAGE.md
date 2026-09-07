@@ -16,10 +16,10 @@ genvm-lint check contracts/provenance.py --json
 ## Live deployment and measured lifecycle
 
 - Network: GenLayer StudioNet; chain ID `61999`.
-- Contract: `0x543B988Bd0b031aCa0d42c326DBCB65856d2eC2c`.
-- Deployment: `0x81d94b104c0668b8a7f97cef66155f4123a61583e31bc8fd8a75d9009ff5929b`.
-- Register artifact: `0x13a252cd806cb6602ec68aa426259b2f2f363ece8c88e34190c006ce9f9e8811`.
+- Contract: `0x65737a541D425a852962454fe5Bad0d124CA8b0b`.
+- Deployment: `0x7f973dbd19225d6eca113cdc64bab2f61b52cc78ee9d8597ec206e7b9ff3cab1`.
+- Register artifact: `0x62aeec87d1610ac5953d46e3863014b2dd6c9203d707abf0dda257603e4c85de`.
 - Add custody event: `0xc1f30523ae0cbed8d98f4253346a6613305b57fe09773cbf15024b98b6f4a8a6`.
-- Submit provenance evidence: `0x6c470c4fffb7550fbf13c2a96f996e547563dc3225cbf3cfcee2c701c3f6fabf`.
-- Real-validator verification: `0x0237b6dde97f0027252a6a7698a66c7a155b9c6820145dd3c58846e45709b619`.
-- Final state: `INCONCLUSIVE`; one custody event and one evidence record. Validators independently retrieved `https://genlayer.com/` and refused unsupported artifact and origin claims.
+- Submit provenance evidence: `0xcf6bdf3701355c0329967c56e716d9782d09323b247ade371317fafac93516db`.
+- Real-validator verification: `0x59735d90a90859b2e3062e6e1aba825ddf1def9cf4bcc8ebff8ce87951255e95`.
+- Challenge: `0xf8266c10ab026f978e4b52d0055785db58882e98a6976d9f3cef5d0671893f54`; reassessment: `0x4605d439ab3e7022df2ee3f5fb3031544b38b82f183c0fe805f379e1a75abfee`. Final state: `INCONCLUSIVE`; validators compared independently retrieved original and challenge sources.
