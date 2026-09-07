@@ -11,16 +11,15 @@ The registrant supplies claims and evidence, but cannot author the authenticity 
 ```powershell
 python -m py_compile contracts/provenance.py
 genvm-lint check contracts/provenance.py --json
-pytest -q tests/direct
 ```
 
 ## Live deployment and measured lifecycle
 
 - Network: GenLayer StudioNet; chain ID `61999`.
-- Contract: `0x37C14D19be3E62775e8a528bb9d1923deFFF5d16`.
-- Deployment: `0x89c67c44e58c49e16b109d6afb645078008e230524f41e5f53da953a0a059773`.
-- Register artifact: `0xbb1c0eba01a6fd43c49fc3298ab4d344af932052f3b20e4bd0267d2b11c72607`.
-- Add custody event: `0x890cd269e2afc91e07a4bb76284a6c1428aa56af0d03a3e9d66fd4e586b3fcdc`.
-- Submit provenance evidence: `0x3973484de85ac71f28d5f35a502b68f610bd51f2d6edca3bb6bef6e87f7e91bf`.
-- Real-validator verification: `0x071b39446ffae77ef0d51e80f259756a450f319a6498e76ef81c68028c4a96f0`.
-- Final state: `INCONCLUSIVE`; one custody event and one evidence record. Validators correctly refused to authenticate unsupported issuer, origin, and hash claims.
+- Contract: `0x543B988Bd0b031aCa0d42c326DBCB65856d2eC2c`.
+- Deployment: `0x81d94b104c0668b8a7f97cef66155f4123a61583e31bc8fd8a75d9009ff5929b`.
+- Register artifact: `0x13a252cd806cb6602ec68aa426259b2f2f363ece8c88e34190c006ce9f9e8811`.
+- Add custody event: `0xc1f30523ae0cbed8d98f4253346a6613305b57fe09773cbf15024b98b6f4a8a6`.
+- Submit provenance evidence: `0x6c470c4fffb7550fbf13c2a96f996e547563dc3225cbf3cfcee2c701c3f6fabf`.
+- Real-validator verification: `0x0237b6dde97f0027252a6a7698a66c7a155b9c6820145dd3c58846e45709b619`.
+- Final state: `INCONCLUSIVE`; one custody event and one evidence record. Validators independently retrieved `https://genlayer.com/` and refused unsupported artifact and origin claims.
