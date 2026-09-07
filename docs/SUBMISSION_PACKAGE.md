@@ -16,10 +16,10 @@ genvm-lint check contracts/provenance.py --json
 ## Live deployment and measured lifecycle
 
 - Network: GenLayer StudioNet; chain ID `61999`.
-- Contract: `0x65737a541D425a852962454fe5Bad0d124CA8b0b`.
-- Deployment: `0x7f973dbd19225d6eca113cdc64bab2f61b52cc78ee9d8597ec206e7b9ff3cab1`.
-- Register artifact: `0x62aeec87d1610ac5953d46e3863014b2dd6c9203d707abf0dda257603e4c85de`.
+- Contract: `0x742db46384a3B683D930c05Ac646097b32Eb4C9f`.
+- Deployment: `0x70201f30308bb9c40bab4318101031955bb536e529819b974496fd429f1a9405`.
+- Register artifact: `0x215595cdfadeeb412f9b5cce75551d6b09059b0cf9ad1b558f89f61ffb1aadf6`.
 - Add custody event: `0xc1f30523ae0cbed8d98f4253346a6613305b57fe09773cbf15024b98b6f4a8a6`.
-- Submit provenance evidence: `0xcf6bdf3701355c0329967c56e716d9782d09323b247ade371317fafac93516db`.
-- Real-validator verification: `0x59735d90a90859b2e3062e6e1aba825ddf1def9cf4bcc8ebff8ce87951255e95`.
-- Challenge: `0xf8266c10ab026f978e4b52d0055785db58882e98a6976d9f3cef5d0671893f54`; reassessment: `0x4605d439ab3e7022df2ee3f5fb3031544b38b82f183c0fe805f379e1a75abfee`. Final state: `INCONCLUSIVE`; validators compared independently retrieved original and challenge sources.
+- Submit provenance evidence: `0x24f2741a95ca7f2f5c69c97dc02db2ae887580d76f7874c786204be13f415b80`.
+- Real-validator verification: `0xc841a8c5a4779a16ad3413220cb70a9e02cfe2b2243cdad566790db62c750cd4`.
+- Final state: `INCONCLUSIVE`; validators independently retrieved the public source and evaluated the original provenance evidence without challenge evidence.
